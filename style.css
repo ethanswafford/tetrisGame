@@ -1,3 +1,7 @@
+body {
+    background-color: peru
+}
+
 .container {
     display: flex;
 }
@@ -7,7 +11,7 @@
     height: 400px;
     display: flex;
     flex-wrap: wrap;
-    background-color: mediumspringgreen;
+    background-color: rgb(136, 212, 22);
 }
 
 .grid div {

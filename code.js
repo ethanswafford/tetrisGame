@@ -52,6 +52,7 @@ addEventListener('DOMContentLoaded', () => {
 
     console.log(theTetrominoes[0][0])
 
+
     let random = Math.floor(Math.random() * theTetrominoes.length)
     let current = theTetrominoes[random][currentRotation]
 
@@ -62,4 +63,30 @@ addEventListener('DOMContentLoaded', () => {
         })
     }
 
+    function undraw() {
+        current.forEach(index => {
+            squares[currentPostion + index].classList.remove('tetromino')
+            squares[currentPosition + index].style.backgroundColor = ''
+        })
+    }
+
+    function control(e) {
+        if (e.keyCode === 37) {
+            moveLeft()
+        } else if (e.keyCode === 38) {
+            rotate()
+        } else if (e.keyCode === 39) {
+            moveRight()
+        } else if (e.keyCode === 40) {
+            moveDown()
+        }
+    }
+    document.addEventListener('keyup', control)
+
+    function moveDown() {
+        undraw()
+        currentPosition += width
+        draw()
+        freeze()
+    }
 })

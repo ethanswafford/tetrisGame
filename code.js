@@ -45,7 +45,7 @@ addEventListener('DOMContentLoaded', () => {
         [width, width + 1, width + 2, width + 3]
     ]
     const theTetrominoes = [
-        [lTetromino, zTetromino, tTetromino, oTetromino, iTetromino]
+        [Tetromino, zTetromino, tTetromino, oTetromino, iTetromino]
     ]
     let currentPosition = 4
     let currentRotation = 0

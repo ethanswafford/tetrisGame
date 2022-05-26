@@ -1,3 +1,4 @@
+// variables and arrays declarations 
 document.addEventListener('DOMContentLoaded', () => {
     const grid = document.querySelector('.grid')
     let squares = Array.from(document.querySelectorAll('.grid div'))
@@ -16,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ]
 
     //The Tetrominoes
+
     const lTetromino = [
         [1, width + 1, width * 2 + 1, 2],
         [width, width + 1, width + 2, width * 2 + 2],
@@ -105,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function freeze() {
         if (current.some(index => squares[currentPosition + index + width].classList.contains('taken'))) {
             current.forEach(index => squares[currentPosition + index].classList.add('taken'))
-                //start a new tetromino falling
+            //start a new tetromino falling
             random = nextRandom
             nextRandom = Math.floor(Math.random() * theTetrominoes.length)
             current = theTetrominoes[random][currentRotation]
